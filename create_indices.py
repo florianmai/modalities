@@ -23,8 +23,8 @@ with open(file_list_output, "w") as f:
             f.write(f"{relative_path}\n")
 
 # Create directory for global index
-global_index_path = Path("data/global_index")
-global_index_path.mkdir(parents=True, exist_ok=True)  # Create directory if it doesn't exist
+global_index_path = base_dir
+global_index_path.mkdir(parents=True, exist_ok=True)
 
 # Create global index
 create_global_index(
@@ -35,5 +35,5 @@ create_global_index(
 
 # Create shuffled index
 create_shuffled_global_index(
-    global_index_file_path=global_index_path / "global_index_inorder.idx"
+    global_index_file_path=global_index_path / "processed_inorder.idx"
 )
